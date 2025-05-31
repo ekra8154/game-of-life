@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life - PixiJS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include PixiJS from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js"></script>
+</head>
+<body>
+    <div id="menu">
+        <button id="randomizeButton">Randomize</button>
+        <button id="clearButton">Clear</button>
+        <button id="pausePlayButton">Pause</button>
+        <div>
+            <label for="speedSlider">Speed:</label>
+            <input type="range" id="speedSlider" min="1" max="1000" value="801" title="Speed (drag left for ~1sec/step, right for max speed)">
+        </div>
+        <div>
+            <input type="checkbox" id="gridLinesCheckbox" checked>
+            <label for="gridLinesCheckbox">Show Grid Lines</label>
+        </div>
+        <div>
+            <label for="trailSlider">Trail:</label>
+            <input type="range" id="trailSlider" min="0" max="98" value="20" title="Trail Amount (0=none, 98=long)">
+        </div>
+        <div>
+            <label for="toolSelect">Tool:</label>
+            <select id="toolSelect">
+                <option value="brush">Brush</option>
+                <option value="eraser">Eraser</option>
+                <option value="shape">Shape</option>
+            </select>
+        </div>
+        <div>
+            <label for="sizeSlider">Size:</label>
+            <input type="range" id="sizeSlider" min="1" max="20" value="1" title="Brush/Eraser Size">
+            <span id="sizeDisplay" style="margin-left: 5px; min-width: 20px; display: inline-block; text-align: right;">1</span>
+        </div>
+        <div>
+            <label for="shapeSelect">Shape:</label>
+            <select id="shapeSelect">
+                <option value="glider">Glider</option>
+                <option value="beehive">Beehive</option>
+                <option value="blinker">Blinker (Line)</option>
+                <option value="toad">Toad</option>
+                <option value="lwss">LWSS</option>
+                <option value="gosper_glider_gun">Glider Gun</option>
+                <option value="small_bomb">Small Bomb</option>
+                <option value="eater1">Eater 1</option>
+            </select>
+        </div>
+        <button id="addShapeButton" title="Save current live cells as a new shape">Add Shape</button>
+        <!-- We can add more controls for WebGL effects later -->
+    </div>
+    <div id="zoomLevelDisplay"></div>
+    <!-- The PixiJS canvas will be added here by the script -->
+    <script src="script.js"></script>
+</body>
+</html> 

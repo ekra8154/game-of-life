@@ -1,0 +1,86 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents scrollbars */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111; /* Dark background for the game */
+}
+
+canvas {
+    display: block; /* Removes extra space below the canvas */
+}
+
+#menu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10; /* Ensure menu is above canvas */
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu button {
+    margin-right: 5px;
+    padding: 8px 12px;
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#menu button:hover {
+    background-color: #555;
+}
+
+#menu button:last-child {
+    margin-right: 0;
+}
+
+#menu div {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#menu label {
+    margin-right: 5px;
+    color: white;
+    font-size: 0.9em;
+}
+
+#menu input[type="range"] {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+#menu select {
+    margin-left: 5px;
+    padding: 3px;
+}
+
+#sizeDisplay {
+    vertical-align: middle; /* Align text with slider */
+    color: white;
+    font-size: 0.9em;
+}
+
+#zoomLevelDisplay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(50, 50, 50, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    z-index: 20; /* Above menu if they overlap, though unlikely */
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+} 
